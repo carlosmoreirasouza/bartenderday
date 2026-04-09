@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bartender Particular | Experiência Clássica</title>
+    <meta
+      name="description"
+      content="Serviço de bartender particular para casamentos, aniversários e jantares com cardápio próprio e bebidas inclusas."
+    />
+    <style>
+      :root {
+        --bg: #140b06;
+        --bg-soft: #211108;
+        --orange: #ff7a1a;
+        --orange-strong: #ff5400;
+        --cream: #ffe8d3;
+        --text: #fff6ee;
+        --muted: #d8b9a1;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", "Segoe UI", Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 20% 10%, #3f1d08 0%, transparent 45%),
+          radial-gradient(circle at 85% 20%, #522409 0%, transparent 40%),
+          linear-gradient(135deg, var(--bg), #070402 60%);
+        min-height: 100vh;
+        line-height: 1.5;
+      }
+
+      .container {
+        width: min(1100px, 92%);
+        margin: 0 auto;
+      }
+
+      .hero {
+        padding: 4.5rem 0 2.5rem;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 122, 26, 0.12);
+        border: 1px solid rgba(255, 122, 26, 0.5);
+        color: var(--cream);
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.86rem;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4.8vw, 3.4rem);
+        line-height: 1.1;
+        max-width: 14ch;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        max-width: 60ch;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .cta-wrap {
+        margin-top: 1.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+
+      .btn {
+        border: 0;
+        border-radius: 0.7rem;
+        padding: 0.88rem 1.25rem;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(90deg, var(--orange), var(--orange-strong));
+        color: #2d1001;
+        box-shadow: 0 8px 25px rgba(255, 84, 0, 0.25);
+      }
+
+      .btn-ghost {
+        color: var(--cream);
+        border: 1px solid rgba(255, 232, 211, 0.35);
+      }
+
+      section {
+        margin-top: 2.2rem;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        background: linear-gradient(170deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        padding: 1.2rem;
+        backdrop-filter: blur(6px);
+      }
+
+      .card h3 {
+        margin-bottom: 0.4rem;
+        color: var(--cream);
+      }
+
+      .subtitle {
+        margin-bottom: 1rem;
+        color: var(--muted);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        margin-bottom: 0.45rem;
+      }
+
+      .glass {
+        display: inline-block;
+        margin-right: 0.35rem;
+      }
+
+      .highlight {
+        margin-top: 2.5rem;
+        padding: 1.2rem;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, rgba(255, 122, 26, 0.2), rgba(255, 84, 0, 0.08));
+        border: 1px solid rgba(255, 122, 26, 0.35);
+      }
+
+      footer {
+        margin: 2.6rem 0 1.2rem;
+        color: #c99d7f;
+        font-size: 0.92rem;
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          padding-top: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <span class="badge">🍸 Bartender Particular Premium</span>
+        <h1>Coquetelaria clássica com presença elegante no seu evento</h1>
+        <p>
+          Transforme sua comemoração com serviço de bartender particular para
+          festas, experiência completa, cardápio autoral e material (bebidas)
+          próprios.
+        </p>
+
+        <div class="cta-wrap">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20para%20bartender%20particular."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Solicitar orçamento no WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+        </div>
+      </header>
+
+      <section id="servicos">
+        <h2>Serviços oferecidos</h2>
+        <p class="subtitle">Bartender para festas particulares com 3 cardápios diferentes.</p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Cardápio Clássico</h3>
+            <ul>
+              <li><span class="glass">🥃</span>Negroni</li>
+              <li><span class="glass">🍸</span>Dry Martini</li>
+              <li><span class="glass">🍹</span>Moscow Mule</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Cardápio Tropical</h3>
+            <ul>
+              <li><span class="glass">🍍</span>Piña Colada</li>
+              <li><span class="glass">🍋</span>Caipirinhas especiais</li>
+              <li><span class="glass">🥭</span>Drinks frutados autorais</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Cardápio Sem Álcool</h3>
+            <ul>
+              <li><span class="glass">🍓</span>Mocktails sofisticados</li>
+              <li><span class="glass">🫐</span>Sodas artesanais</li>
+              <li><span class="glass">🍊</span>Infusões cítricas</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Ocasiões para o serviço</h2>
+        <div class="cards">
+          <article class="card"><h3>💍 Casamentos</h3></article>
+          <article class="card"><h3>🎉 Aniversários</h3></article>
+          <article class="card"><h3>🍽️ Jantares</h3></article>
+        </div>
+      </section>
+
+      <section class="highlight">
+        <h2>Experiência completa</h2>
+        <p>
+          Você não precisa se preocupar com nada: levamos cardápio próprio,
+          utensílios e bebidas para entregar um bar completo, com estética de
+          bartender clássico e atendimento profissional.
+        </p>
+      </section>
+
+      <footer>
+        Bartender Particular • Atendimento sob orçamento via WhatsApp
+      </footer>
+    </main>
+  </body>
+</html>
