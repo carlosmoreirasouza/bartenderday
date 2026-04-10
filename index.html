@@ -37,12 +37,47 @@
       }
 
       .container {
-        width: min(1100px, 92%);
+        width: min(1120px, 92%);
         margin: 0 auto;
       }
 
       .hero {
-        padding: 4.5rem 0 2.5rem;
+        padding: 4rem 0 2.5rem;
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        align-items: center;
+        gap: 1.2rem;
+      }
+
+      .hero-media {
+        position: relative;
+        min-height: 520px;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
+      }
+
+      .hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 4, 2, 0) 32%, rgba(7, 4, 2, 0.78) 100%);
+      }
+
+      .hero-caption {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        font-size: 0.92rem;
+        color: #ffe8d3;
       }
 
       .badge {
@@ -59,10 +94,14 @@
       }
 
       h1 {
-        font-size: clamp(2rem, 4.8vw, 3.4rem);
+        font-size: clamp(2rem, 4.5vw, 3.3rem);
         line-height: 1.1;
         max-width: 14ch;
         margin-bottom: 1rem;
+      }
+
+      h2 {
+        margin-bottom: 0.5rem;
       }
 
       .hero p {
@@ -103,7 +142,7 @@
       }
 
       section {
-        margin-top: 2.2rem;
+        margin-top: 2.4rem;
       }
 
       .cards {
@@ -143,6 +182,36 @@
         margin-right: 0.35rem;
       }
 
+      .gallery {
+        margin-top: 2.5rem;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .gallery-item {
+        border-radius: 1rem;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        display: block;
+      }
+
+      .gallery-item figcaption {
+        padding: 0.75rem 0.85rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
       .highlight {
         margin-top: 2.5rem;
         padding: 1.2rem;
@@ -158,9 +227,19 @@
         text-align: center;
       }
 
-      @media (max-width: 640px) {
+      @media (max-width: 900px) {
         .hero {
+          grid-template-columns: 1fr;
           padding-top: 3rem;
+        }
+
+        .hero-media {
+          min-height: 430px;
+          order: -1;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -168,25 +247,33 @@
   <body>
     <main class="container">
       <header class="hero">
-        <span class="badge">🍸 Bartender Particular Premium</span>
-        <h1>Coquetelaria clássica com presença elegante no seu evento</h1>
-        <p>
-          Transforme sua comemoração com serviço de bartender particular para
-          festas, experiência completa, cardápio autoral e material (bebidas)
-          próprios.
-        </p>
+        <div>
+          <span class="badge">🍸 Bartender Particular Premium</span>
+          <h1>Coquetelaria clássica com presença elegante no seu evento</h1>
+          <p>
+            Transforme sua comemoração com serviço de bartender particular para
+            festas, experiência completa, cardápio autoral e material (bebidas)
+            próprios.
+          </p>
 
-        <div class="cta-wrap">
-          <a
-            class="btn btn-primary"
-            href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20para%20bartender%20particular."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Solicitar orçamento no WhatsApp
-          </a>
-          <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+          <div class="cta-wrap">
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20para%20bartender%20particular."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Solicitar orçamento no WhatsApp
+            </a>
+            <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+          </div>
         </div>
+
+        <figure class="hero-media">
+          <img src="./images/drink-destaque.jpg" alt="Bartender finalizando um drink vermelho com borrifador" />
+          <div class="hero-overlay"></div>
+          <figcaption class="hero-caption">Estética sofisticada para destacar seu evento.</figcaption>
+        </figure>
       </header>
 
       <section id="servicos">
@@ -220,6 +307,27 @@
               <li><span class="glass">🍊</span>Infusões cítricas</li>
             </ul>
           </article>
+        </div>
+      </section>
+
+      <section class="gallery" aria-label="Galeria de drinks">
+        <h2>Visual do bar no evento</h2>
+        <p class="subtitle">Use as suas fotos para reforçar o posicionamento premium da página.</p>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="./images/drink-rosa.jpg" alt="Drink rosa com morango e alecrim" />
+            <figcaption>Drink autoral com frutas frescas e apresentação elegante.</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="./images/drink-laranja.jpg" alt="Drink cítrico alaranjado servido em taça" />
+            <figcaption>Coquetel clássico cítrico com acabamento premium.</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="./images/drink-destaque.jpg" alt="Bartender finalizando drink em close" />
+            <figcaption>Execução ao vivo para valorizar a experiência dos convidados.</figcaption>
+          </figure>
         </div>
       </section>
 
